@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2020", // Good modern baseline for Node.js
+    "module": "CommonJS", // Standard for Node.js
+    "lib": ["ES2020"], // Modern JS runtime features
+    "moduleResolution": "node", // Resolve using Node-style resolution
+    "esModuleInterop": true, // Allows default imports from CommonJS modules
+    "forceConsistentCasingInFileNames": true, // Catch casing issues, especially across OSes
+    "allowSyntheticDefaultImports": true, // Supports default imports even when not explicitly exported
+    "resolveJsonModule": true, // Enable importing .json files
+
+    /* Output */
+    "outDir": "./dist", // Where compiled JS goes
+    "rootDir": "./src", // Where source files are located
+    "removeComments": true, // Strip out comments in production build
+    "sourceMap": true, // Allow debugging with sourcemaps
+
+    /* Type Checking */
+    "strict": true, // Enable all strict checks
+    "noImplicitAny": true, // Disallow variables without a type
+    "strictNullChecks": true, // Treat null/undefined strictly
+    "strictFunctionTypes": true, // Safer function comparisons
+    "strictBindCallApply": true, // Type-check .bind/.call/.apply
+    "strictPropertyInitialization": true, // Ensure class properties are initialized
+    "noImplicitThis": true, // Ensure 'this' is typed
+    "alwaysStrict": true, // Enforce "use strict"
+
+    /* Lint-like Warnings */
+    "noUnusedLocals": true, // Warn on unused variables
+    // "noUnusedParameters": true, // Warn on unused function parameters
+    "noImplicitReturns": true, // Warn if not all code paths return
+    "noFallthroughCasesInSwitch": true, // Disallow fall-through in switch
+
+    /* Interop Constraints */
+    "isolatedModules": true, // Required for some tools like Babel or SWC
+    "skipLibCheck": true, // Speeds up compilation by skipping .d.ts checks,
+
+    /* Path Alias */
+    "baseUrl": "./src",
+    "paths": {
+      "@/config/*": ["./config/*"],
+      "@/controllers/*": ["./controllers/*"],
+      "@/helpers/*": ["./helpers/*"],
+      "@/middlewares/*": ["./middlewares/*"],
+      "@/routes/*": ["./routes/*"],
+      "@/schema/*": ["./schema/*"],
+      "@/services/*": ["./services/*"],
+      "@/types/*": ["./types/*"],
+      "@/utils/*": ["./utils/*"],
+      "@/validators/*": ["./validators/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
