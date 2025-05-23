@@ -2,10 +2,11 @@ import express, { Express, Request, Response } from "express";
 import config from "./config";
 import logger from "./config/logger";
 import v1Router from "./routes/v1";
-import customErrorHandler from "./middlewares/error.middleware";
+import { customErrorHandler, attachCorrelationId } from "./middlewares";
 
 const app: Express = express();
 
+app.use(attachCorrelationId);
 app.use(express.json());
 app.use("/api/v1", v1Router);
 
